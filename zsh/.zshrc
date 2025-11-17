@@ -1,0 +1,1 @@
+alias dot-rebuild="$HOME/dotfiles/rebuild.sh"
