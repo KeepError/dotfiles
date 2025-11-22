@@ -2,6 +2,10 @@ brew "stow"
 
 brew "neovim"
 brew "tmux"
+brew "powerlevel10k"
+brew "gemini-cli"
+
+cask "font-meslo-for-powerlevel10k"
 
 cask "raycast"
 cask "ghostty"
