@@ -92,3 +92,7 @@ To read the current Dock configuration (useful for finding Bundle IDs for `macse
 ```bash
 defaults read com.apple.dock persistent-apps
 ```
+
+## 🔗 References
+
+*   **Powerlevel10k Homebrew Installation:** [https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#homebrew](https://github.com/romkatv/powerlevel10k?tab=readme-ov-file#homebrew)
