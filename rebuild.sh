@@ -2,7 +2,7 @@
 set -e
 
 BREW="/opt/homebrew/bin/brew"
-DOTFILES="."
+DOTFILES="$HOME/dotfiles"
 
 chmod +x "$DOTFILES/rebuild.sh"
 

@@ -70,7 +70,7 @@ Zen Browser profiles must be imported manually.
 To update your system (Brew packages, dotfiles, or macOS settings), simply run the rebuild script again:
 
 ```bash
-./rebuild.sh
+dot-rebuild
 ```
 
 ### Changing system packages
