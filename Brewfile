@@ -2,11 +2,11 @@ brew "stow"
 
 brew "neovim"
 brew "tmux"
-brew "powerlevel10k"
+brew "starship"
 brew "fastfetch"
 brew "gemini-cli"
 
-cask "font-meslo-for-powerlevel10k"
+cask "font-fira-code-nerd-font"
 
 cask "raycast"
 cask "ghostty"
