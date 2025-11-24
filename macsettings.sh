@@ -41,6 +41,8 @@ defaults write com.apple.spaces "spans-displays" -bool "true"
 
 # Dock
 defaults write com.apple.dock "autohide" -bool "true"
+defaults write com.apple.Dock "size-immutable" -bool yes
+defaults write com.apple.dock "autohide-delay" -float 0
 defaults write com.apple.dock "orientation" -string "bottom"
 defaults write com.apple.dock "show-recents" -bool "false"
 defaults write com.apple.dock "tilesize" -int "46"
