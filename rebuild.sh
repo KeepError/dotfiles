@@ -6,14 +6,14 @@ DOTFILES="$HOME/dotfiles"
 
 chmod +x "$DOTFILES/rebuild.sh"
 
-echo "==> Installing Homebrew packages"
-$BREW bundle -v --cleanup --file "$DOTFILES/Brewfile"
-
 echo "==> Applying macOS settings"
-bash "$DOTFILES/macsettings.sh"
+bash "$DOTFILES/macos/settings.sh"
+
+echo "==> Installing Homebrew packages"
+$BREW bundle -v --cleanup --file "$DOTFILES/homebrew/Brewfile"
 
 echo "==> Linking dotfiles using stow"
-bash "$DOTFILES/stow.sh"
+bash "$DOTFILES/stow/stow.sh"
 
 echo "==> Done! 🎉"
 
