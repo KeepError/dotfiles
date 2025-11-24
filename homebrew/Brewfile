@@ -3,6 +3,7 @@ brew "stow"
 brew "neovim"
 brew "tmux"
 brew "starship"
+brew "fzf"
 brew "fastfetch"
 brew "gemini-cli"
 
