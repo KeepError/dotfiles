@@ -4,4 +4,5 @@ stow zsh
 stow starship
 stow tmux
 stow zellij
+stow nvim
 stow ghostty
