@@ -6,6 +6,7 @@ brew "zellij"
 brew "starship"
 brew "fzf"
 brew "fastfetch"
+brew "mise"
 brew "gemini-cli"
 
 cask "font-fira-code-nerd-font"
