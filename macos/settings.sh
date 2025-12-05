@@ -48,8 +48,8 @@ defaults write com.apple.dock "show-recents" -bool "false"
 defaults write com.apple.dock "tilesize" -int "46"
 
 # Screenshots
-defaults write com.apple.screencapture "show-thumbnail" -bool "true"
-
+defaults write com.apple.screencapture "target" -string "clipboard"
 
 killall Finder || true
 killall Dock || true
+killall SystemUIServer || true
