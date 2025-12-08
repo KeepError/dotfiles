@@ -9,6 +9,7 @@ brew "fzf"
 brew "fastfetch"
 brew "mise"
 brew "gemini-cli"
+brew "yt-dlp"
 
 cask "font-fira-code-nerd-font"
 
