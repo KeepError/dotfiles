@@ -30,8 +30,7 @@ return {
           },
         },
       }
-      vim.keymap.set('n', '<leader>ee', ':Neotree toggle filesystem left<CR>', { desc= 'Open [E]xplorer' })
-      vim.keymap.set('n', '<leader>ef', ':Neotree toggle filesystem reveal left<CR>', { desc= 'Open [E]xplorer at [F]ile' })
+      vim.keymap.set('n', '<leader>e', ':Neotree toggle filesystem reveal left<CR>', { desc= 'Open [E]xplorer' })
     end
   }
 }

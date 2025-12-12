@@ -31,8 +31,16 @@ return { -- Collection of various small independent plugins/modules
         return '%2l:%-2v'
       end
 
-      require('mini.animate').setup()
-
+	local animate = require('mini.animate')
+      require('mini.animate').setup({
+        cursor = {
+	    enable = false,
+	  },
+	scroll = {
+	    enable = true,
+	    timing = animate.gen_timing.linear({ duration = 50, unit = 'total' }),
+	  },
+      })
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
