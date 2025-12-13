@@ -9,13 +9,13 @@ return {
     },
     lazy = false, -- neo-tree will lazily load itself
     config = function()
-      require('neo-tree').setup {
+      require("neo-tree").setup({
         event_handlers = {
           {
             event = "file_open_requested",
             handler = function()
               require("neo-tree.command").execute({ action = "close" })
-            end
+            end,
           },
         },
         filesystem = {
@@ -24,13 +24,13 @@ return {
             hide_dotfiles = false,
             hide_gitignored = true,
             never_show = {
-	      '.git',
-	      '.DS_Store',
-	    },
+              ".git",
+              ".DS_Store",
+            },
           },
         },
-      }
-      vim.keymap.set('n', '<leader>e', ':Neotree toggle filesystem reveal left<CR>', { desc= 'Open [E]xplorer' })
-    end
-  }
+      })
+      vim.keymap.set("n", "<leader>e", ":Neotree toggle filesystem reveal left<CR>", { desc = "Open [E]xplorer" })
+    end,
+  },
 }
