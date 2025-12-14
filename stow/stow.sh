@@ -6,3 +6,4 @@ stow tmux
 stow zellij
 stow nvim
 stow ghostty
+stow mise
