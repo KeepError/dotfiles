@@ -111,6 +111,7 @@ require("lazy").setup({
     { 'nvim-mini/mini.pick', version = '*' },
     { 'lewis6991/gitsigns.nvim' },
     { 'neovim/nvim-lspconfig' },
+    {'goolord/alpha-nvim'}
   },
   install = { colorscheme = { "habamax" } },
   checker = { enabled = true },
@@ -136,5 +137,20 @@ statusline.section_location = function()
 end
 
 
+-- Alpha setup
+require('alpha').setup(require('alpha.themes.startify').config)
+
+
 -- LSP setup
-vim.lsp.enable("lua_ls")
+vim.lsp.enable({"lua_ls"})
+
+-- Recognize vim in lua
+vim.lsp.config("lua_ls", {
+  settings = {
+    Lua = {
+      workspace = {
+        library = vim.api.nvim_get_runtime_file("", true),
+      }
+    }
+  }
+})
