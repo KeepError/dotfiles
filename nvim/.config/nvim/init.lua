@@ -108,13 +108,13 @@ require("lazy").setup({
   spec = {
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     { "wakatime/vim-wakatime", lazy = false },
-    { "nvim-tree/nvim-web-devicons", },
     { "folke/which-key.nvim", event = "VeryLazy" },
     { 'nvim-mini/mini.statusline', version = '*' },
     { 'nvim-mini/mini.pick', version = '*' },
     { 'nvim-mini/mini.files', version = '*' },
     { 'nvim-mini/mini.icons', version = '*' },
     { 'nvim-mini/mini.starter', version = '*' },
+    { 'nvim-mini/mini.notify', version = '*' },
     { 'lewis6991/gitsigns.nvim' },
     { 'neovim/nvim-lspconfig' },
   },
@@ -124,6 +124,10 @@ require("lazy").setup({
 
 
 vim.g.have_nerd_font = true
+
+
+-- Icons setup
+require('mini.icons').setup()
 
 
 -- Pick setup
@@ -141,16 +145,15 @@ vim.cmd.colorscheme "catppuccin"
 
 
 -- Statusline setup
-local statusline = require("mini.statusline")
-statusline.setup({ use_icons = vim.g.have_nerd_font })
----@diagnostic disable-next-line: duplicate-set-field
-statusline.section_location = function()
-  return "%2l:%-2v"
-end
+require("mini.statusline").setup()
 
 
 -- Starter setup
 require('mini.starter').setup()
+
+
+-- Notify setup
+require('mini.notify').setup()
 
 
 -- LSP setup
