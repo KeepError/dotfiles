@@ -85,6 +85,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+---@diagnostic disable-next-line: undefined-field
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
   local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
@@ -134,6 +135,7 @@ vim.cmd.colorscheme "catppuccin"
 -- Statusline setup
 local statusline = require("mini.statusline")
 statusline.setup({ use_icons = vim.g.have_nerd_font })
+---@diagnostic disable-next-line: duplicate-set-field
 statusline.section_location = function()
   return "%2l:%-2v"
 end
