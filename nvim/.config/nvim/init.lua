@@ -8,6 +8,8 @@ vim.o.relativenumber = true
 -- Don't show the mode, since it's already in the status line
 vim.o.showmode = false
 
+vim.opt.winborder = "rounded"
+
 -- Sync clipboard between OS and Neovim.
 vim.schedule(function()
   vim.o.clipboard = "unnamedplus"
@@ -110,9 +112,11 @@ require("lazy").setup({
     { "folke/which-key.nvim", event = "VeryLazy" },
     { 'nvim-mini/mini.statusline', version = '*' },
     { 'nvim-mini/mini.pick', version = '*' },
+    { 'nvim-mini/mini.files', version = '*' },
+    { 'nvim-mini/mini.icons', version = '*' },
+    { 'nvim-mini/mini.starter', version = '*' },
     { 'lewis6991/gitsigns.nvim' },
     { 'neovim/nvim-lspconfig' },
-    {'goolord/alpha-nvim'}
   },
   install = { colorscheme = { "habamax" } },
   checker = { enabled = true },
@@ -128,6 +132,10 @@ pick.setup()
 vim.ui.select = pick.ui_select
 
 
+-- Files setup
+require('mini.files').setup()
+
+
 -- Theme setup
 vim.cmd.colorscheme "catppuccin"
 
@@ -141,8 +149,8 @@ statusline.section_location = function()
 end
 
 
--- Alpha setup
-require('alpha').setup(require('alpha.themes.startify').config)
+-- Starter setup
+require('mini.starter').setup()
 
 
 -- LSP setup
