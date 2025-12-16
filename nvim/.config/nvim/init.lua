@@ -122,7 +122,9 @@ vim.g.have_nerd_font = true
 
 
 -- Pick setup
-require('mini.pick').setup()
+local pick = require('mini.pick')
+pick.setup()
+vim.ui.select = pick.ui_select
 
 
 -- Theme setup
