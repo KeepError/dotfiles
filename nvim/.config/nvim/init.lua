@@ -116,6 +116,7 @@ require("lazy").setup({
     { 'nvim-mini/mini.notify', version = '*' },
     { 'nvim-mini/mini.clue', version = '*' },
     { 'nvim-mini/mini.diff', version = '*' },
+    { 'nvim-mini/mini.completion', version = '*' },
     { 'neovim/nvim-lspconfig' },
   },
   install = { colorscheme = { "habamax" } },
@@ -199,6 +200,10 @@ miniclue.setup({
 
 -- Diff setup
 require('mini.diff').setup({view={style='sign'}})
+
+
+-- Completion setup
+require('mini.completion').setup()
 
 
 -- LSP setup
