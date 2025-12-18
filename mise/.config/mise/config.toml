@@ -2,3 +2,4 @@
 "aqua:LuaLS/lua-language-server" = "latest"
 node = "24"
 python = "3.14"
+stylua = "latest"

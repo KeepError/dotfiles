@@ -83,8 +83,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
-
-
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 ---@diagnostic disable-next-line: undefined-field
@@ -108,31 +106,29 @@ require("lazy").setup({
   spec = {
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     { "wakatime/vim-wakatime", lazy = false },
-    { 'nvim-mini/mini.statusline', version = '*' },
-    { 'nvim-mini/mini.pick', version = '*' },
-    { 'nvim-mini/mini.files', version = '*' },
-    { 'nvim-mini/mini.icons', version = '*' },
-    { 'nvim-mini/mini.starter', version = '*' },
-    { 'nvim-mini/mini.notify', version = '*' },
-    { 'nvim-mini/mini.clue', version = '*' },
-    { 'nvim-mini/mini.diff', version = '*' },
-    { 'nvim-mini/mini.completion', version = '*' },
-    { 'neovim/nvim-lspconfig' },
+    { "nvim-mini/mini.statusline", version = "*" },
+    { "nvim-mini/mini.pick", version = "*" },
+    { "nvim-mini/mini.files", version = "*" },
+    { "nvim-mini/mini.icons", version = "*" },
+    { "nvim-mini/mini.starter", version = "*" },
+    { "nvim-mini/mini.notify", version = "*" },
+    { "nvim-mini/mini.clue", version = "*" },
+    { "nvim-mini/mini.diff", version = "*" },
+    { "nvim-mini/mini.completion", version = "*" },
+    { "neovim/nvim-lspconfig" },
+    { "stevearc/conform.nvim" },
   },
   install = { colorscheme = { "habamax" } },
   checker = { enabled = true },
 })
 
-
 vim.g.have_nerd_font = true
 
-
 -- Icons setup
-require('mini.icons').setup()
-
+require("mini.icons").setup()
 
 -- Pick setup
-local minipick = require('mini.pick')
+local minipick = require("mini.pick")
 minipick.setup()
 vim.ui.select = minipick.ui_select
 
@@ -141,57 +137,51 @@ vim.keymap.set("n", "<leader>fg", minipick.builtin.grep_live, { desc = "Live gre
 vim.keymap.set("n", "<leader>fb", minipick.builtin.buffers, { desc = "Buffers" })
 vim.keymap.set("n", "<leader>fh", minipick.builtin.help, { desc = "Help tags" })
 
-
 -- Files setup
-local minifiles = require('mini.files')
+local minifiles = require("mini.files")
 minifiles.setup()
 
 vim.keymap.set("n", "<leader>e", minifiles.open, { desc = "Explorer" })
 
-
 -- Theme setup
-vim.cmd.colorscheme "catppuccin"
-
+vim.cmd.colorscheme("catppuccin")
 
 -- Statusline setup
 require("mini.statusline").setup()
 
-
 -- Starter setup
-require('mini.starter').setup()
-
+require("mini.starter").setup()
 
 -- Notify setup
-require('mini.notify').setup()
-
+require("mini.notify").setup()
 
 -- Clue setup
-local miniclue = require('mini.clue')
+local miniclue = require("mini.clue")
 miniclue.setup({
   triggers = {
     -- Leader triggers
-    { mode = 'n', keys = '<Leader>' },
-    { mode = 'x', keys = '<Leader>' },
+    { mode = "n", keys = "<Leader>" },
+    { mode = "x", keys = "<Leader>" },
     -- Built-in completion
-    { mode = 'i', keys = '<C-x>' },
+    { mode = "i", keys = "<C-x>" },
     -- `g` key
-    { mode = 'n', keys = 'g' },
-    { mode = 'x', keys = 'g' },
+    { mode = "n", keys = "g" },
+    { mode = "x", keys = "g" },
     -- Marks
-    { mode = 'n', keys = "'" },
-    { mode = 'n', keys = '`' },
-    { mode = 'x', keys = "'" },
-    { mode = 'x', keys = '`' },
+    { mode = "n", keys = "'" },
+    { mode = "n", keys = "`" },
+    { mode = "x", keys = "'" },
+    { mode = "x", keys = "`" },
     -- Registers
-    { mode = 'n', keys = '"' },
-    { mode = 'x', keys = '"' },
-    { mode = 'i', keys = '<C-r>' },
-    { mode = 'c', keys = '<C-r>' },
+    { mode = "n", keys = '"' },
+    { mode = "x", keys = '"' },
+    { mode = "i", keys = "<C-r>" },
+    { mode = "c", keys = "<C-r>" },
     -- Window commands
-    { mode = 'n', keys = '<C-w>' },
+    { mode = "n", keys = "<C-w>" },
     -- `z` key
-    { mode = 'n', keys = 'z' },
-    { mode = 'x', keys = 'z' },
+    { mode = "n", keys = "z" },
+    { mode = "x", keys = "z" },
   },
 
   clues = {
@@ -205,17 +195,14 @@ miniclue.setup({
   },
 })
 
-
 -- Diff setup
-require('mini.diff').setup({view={style='sign'}})
-
+require("mini.diff").setup({ view = { style = "sign" } })
 
 -- Completion setup
-require('mini.completion').setup()
-
+require("mini.completion").setup()
 
 -- LSP setup
-vim.lsp.enable({"lua_ls"})
+vim.lsp.enable({ "lua_ls" })
 
 -- Recognize vim in lua
 vim.lsp.config("lua_ls", {
@@ -223,7 +210,23 @@ vim.lsp.config("lua_ls", {
     Lua = {
       workspace = {
         library = vim.api.nvim_get_runtime_file("", true),
-      }
-    }
-  }
+      },
+    },
+  },
+})
+
+-- Format setup
+
+require("conform").setup({
+  formatters_by_ft = {
+    lua = { "stylua" },
+  },
+})
+
+-- Format on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  callback = function(args)
+    require("conform").format({ bufnr = args.buf })
+  end,
 })
