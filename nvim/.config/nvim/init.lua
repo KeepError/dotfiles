@@ -132,13 +132,21 @@ require('mini.icons').setup()
 
 
 -- Pick setup
-local pick = require('mini.pick')
-pick.setup()
-vim.ui.select = pick.ui_select
+local minipick = require('mini.pick')
+minipick.setup()
+vim.ui.select = minipick.ui_select
+
+vim.keymap.set("n", "<leader>ff", minipick.builtin.files, { desc = "Find files" })
+vim.keymap.set("n", "<leader>fg", minipick.builtin.grep_live, { desc = "Live grep" })
+vim.keymap.set("n", "<leader>fb", minipick.builtin.buffers, { desc = "Buffers" })
+vim.keymap.set("n", "<leader>fh", minipick.builtin.help, { desc = "Help tags" })
 
 
 -- Files setup
-require('mini.files').setup()
+local minifiles = require('mini.files')
+minifiles.setup()
+
+vim.keymap.set("n", "<leader>e", minifiles.open, { desc = "Explorer" })
 
 
 -- Theme setup
