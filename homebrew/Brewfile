@@ -11,6 +11,7 @@ brew "fastfetch"
 brew "mise"
 brew "gemini-cli"
 brew "yt-dlp"
+brew "ffmpeg"
 
 cask "font-fira-code-nerd-font"
 
