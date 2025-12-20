@@ -13,6 +13,13 @@ brew "gemini-cli"
 brew "yt-dlp"
 brew "ffmpeg"
 
+brew "python"
+brew "node"
+brew "lua-language-server"
+brew "ruff"
+brew "ty"
+brew "stylua"
+
 cask "font-fira-code-nerd-font"
 
 cask "raycast"
