@@ -202,7 +202,8 @@ require("mini.diff").setup({ view = { style = "sign" } })
 require("mini.completion").setup()
 
 -- LSP setup
-vim.lsp.enable({ "lua_ls", "python" })
+-- Find available here: https://github.com/neovim/nvim-lspconfig/tree/master/lsp
+vim.lsp.enable({ "lua_ls", "ty" })
 
 -- Recognize vim in lua
 vim.lsp.config("lua_ls", {
