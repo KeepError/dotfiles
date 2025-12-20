@@ -202,7 +202,7 @@ require("mini.diff").setup({ view = { style = "sign" } })
 require("mini.completion").setup()
 
 -- LSP setup
-vim.lsp.enable({ "lua_ls" })
+vim.lsp.enable({ "lua_ls", "python" })
 
 -- Recognize vim in lua
 vim.lsp.config("lua_ls", {
@@ -220,6 +220,7 @@ vim.lsp.config("lua_ls", {
 require("conform").setup({
   formatters_by_ft = {
     lua = { "stylua" },
+    python = { "ruff_format" },
   },
 })
 
