@@ -203,7 +203,11 @@ require("mini.completion").setup()
 
 -- LSP setup
 -- Find available here: https://github.com/neovim/nvim-lspconfig/tree/master/lsp
-vim.lsp.enable({ "lua_ls", "ty" })
+vim.lsp.enable({ "lua_ls", "ty", "ruff", "biome" })
+
+vim.diagnostic.config({
+  virtual_text = true,
+})
 
 -- Recognize vim in lua
 vim.lsp.config("lua_ls", {
@@ -218,10 +222,13 @@ vim.lsp.config("lua_ls", {
 
 -- Format setup
 
+-- Find available here: https://github.com/stevearc/conform.nvim/blob/master/lua/conform/formatters/ruff_format.lua
 require("conform").setup({
   formatters_by_ft = {
     lua = { "stylua" },
-    python = { "ruff_format" },
+    python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
+    javascript = { "biome_check" },
+    typescript = { "biome_check" },
   },
 })
 
