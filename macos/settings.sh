@@ -8,7 +8,6 @@ apps=(
     "/System/Applications/Music.app"
     "/Applications/Visual Studio Code.app"
     "/Applications/Ghostty.app"
-    "/Applications/OrbStack.app"
     "/Applications/Insomnia.app"
 )
 defaults write com.apple.dock persistent-apps -array
