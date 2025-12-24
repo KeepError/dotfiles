@@ -41,7 +41,7 @@ Run the rebuild script. This will:
 
 Some settings cannot be automated via scripts and require manual setup.
 
-### Raycast
+
 1.  **Import Settings:**
     *   Open Raycast.
     *   Go to Settings > Advanced > Import.
@@ -54,7 +54,12 @@ Some settings cannot be automated via scripts and require manual setup.
     *   Expand **Text**.
     *   Find **Convert Text to Simplified Chinese** & **Convert Text to Traditional Chinese**.
     *   Click the shortcut, then press `Backspace` (Delete) to remove the shortcut.
-    *   *Reason: These system shortcuts often conflict with Raycast or Hyperkey setups.*
+    *   *Reason: These system shortcuts often conflict with Hyperkey setups, especially when trying to bind complex key combinations involving Control, Option, and Command keys through tools like Raycast.*
+3.  **Disable Input Source Switching (for tmux compatibility):**
+    *   System Settings > Keyboard > Keyboard Shortcuts > Input Sources.
+    *   Uncheck **Select the previous input source**.
+    *   Uncheck **Select next source in Input menu**.
+    *   *Reason: `Control + Space` is often used as a prefix in tmux, and these shortcuts can cause conflicts.*
 
 ### Zen Browser
 Zen Browser profiles must be imported manually.
