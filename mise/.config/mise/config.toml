@@ -1,6 +1,7 @@
 [tools]
 lua-language-server = "latest"
 node = "latest"
+"npm:@biomejs/biome" = "latest"
 "npm:typescript-language-server" = "latest"
 "pipx:ruff" = "latest"
 "pipx:ty" = "latest"
