@@ -1,0 +1,9 @@
+[tools]
+lua-language-server = "latest"
+node = "latest"
+"npm:typescript-language-server" = "latest"
+"pipx:ruff" = "latest"
+"pipx:ty" = "latest"
+python = "latest"
+stylua = "latest"
+uv = "latest"

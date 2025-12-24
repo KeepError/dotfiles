@@ -12,6 +12,9 @@ bash "$DOTFILES/macos/settings.sh"
 echo "==> Installing Homebrew packages"
 $BREW bundle -v --cleanup --file "$DOTFILES/homebrew/Brewfile"
 
+echo "==> Installing mise managed tools"
+mise install
+
 echo "==> Linking dotfiles using stow"
 bash "$DOTFILES/stow/stow.sh"
 
