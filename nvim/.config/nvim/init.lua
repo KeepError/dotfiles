@@ -203,7 +203,7 @@ require("mini.completion").setup()
 
 -- LSP setup
 -- Find available here: https://github.com/neovim/nvim-lspconfig/tree/master/lsp
-vim.lsp.enable({ "lua_ls", "ty", "ruff", "biome" })
+vim.lsp.enable({ "lua_ls", "ty", "ruff", "ts_ls", "biome" })
 
 vim.diagnostic.config({
   virtual_text = true,
@@ -220,15 +220,28 @@ vim.lsp.config("lua_ls", {
   },
 })
 
+-- Get the path to the global typescript installed by mise
+local mise_ts_path = vim.fn.trim(vim.fn.system("mise where npm:typescript"))
+if mise_ts_path ~= "" then
+  vim.lsp.config("ts_ls", {
+    init_options = {
+      tsserver = {
+        -- Point explicitly to the tsserver library
+        fallbackPath = mise_ts_path .. "/lib/node_modules/typescript/lib",
+      },
+    },
+  })
+end
+
 -- Format setup
 
--- Find available here: https://github.com/stevearc/conform.nvim/blob/master/lua/conform/formatters/ruff_format.lua
+-- Find available here: https://github.com/stevearc/conform.nvim/blob/master/lua/conform/formatters
 require("conform").setup({
   formatters_by_ft = {
     lua = { "stylua" },
     python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
-    javascript = { "biome_check" },
-    typescript = { "biome_check" },
+    javascript = { "biome-check" },
+    typescript = { "biome-check" },
   },
 })
 
