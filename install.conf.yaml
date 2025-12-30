@@ -31,13 +31,13 @@
 - shell:
     -
       description: Installing homebrew packages
-      command: brew bundle --cleanup -v --file system/mac/Brewfile
+      command: brew bundle --cleanup -v --file platforms/mac/Brewfile
       stdin: true
       stdout: true
       stderr: true
     -
       description: Applying settings
-      command: sh system/mac/settings.sh
+      command: sh platforms/mac/settings.sh
       stdin: true
       stdout: true
       stderr: true
