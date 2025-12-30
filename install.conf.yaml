@@ -22,6 +22,8 @@
         path: configs/zellij
     ~/.config/starship:
         path: configs/starship
+    ~/.config/yazi:
+        path: configs/yazi
     ~/.zprofile:
         path: configs/zsh/.zprofile
     ~/.zshrc:
