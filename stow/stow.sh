@@ -1,9 +1,0 @@
-cd $HOME/dotfiles
-
-stow zsh
-stow starship
-stow tmux
-stow zellij
-stow nvim
-stow ghostty
-stow mise

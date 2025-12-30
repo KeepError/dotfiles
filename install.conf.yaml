@@ -1,0 +1,43 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean:
+    ~/:
+      force: true
+    ~/.config:
+      recursive: true
+
+- link:
+    ~/.config/nvim:
+        path: configs/nvim
+    ~/.config/ghostty:
+        path: configs/ghostty
+    ~/.config/mise:
+        path: configs/mise
+    ~/.config/tmux:
+        path: configs/tmux
+    ~/.config/zellij:
+        path: configs/zellij
+    ~/.config/starship:
+        path: configs/starship
+    ~/.zprofile:
+        path: configs/zsh/.zprofile
+    ~/.zshrc:
+        path: configs/zsh/.zshrc
+
+
+- shell:
+    -
+      description: Installing homebrew packages
+      command: brew bundle --cleanup -v --file system/mac/Brewfile
+      stdin: true
+      stdout: true
+      stderr: true
+    -
+      description: Applying settings
+      command: sh system/mac/settings.sh
+      stdin: true
+      stdout: true
+      stderr: true
