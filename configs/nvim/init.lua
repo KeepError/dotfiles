@@ -139,7 +139,7 @@ vim.keymap.set("n", "<leader>fh", minipick.builtin.help, { desc = "Help tags" })
 
 -- Files setup
 local minifiles = require("mini.files")
-minifiles.setup()
+minifiles.setup({ windows = { preview = true } })
 
 vim.keymap.set("n", "<leader>e", minifiles.open, { desc = "Explorer" })
 
