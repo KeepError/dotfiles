@@ -24,8 +24,6 @@
         path: configs/starship
     ~/.config/yazi:
         path: configs/yazi
-    ~/.zprofile:
-        path: configs/zsh/.zprofile
     ~/.zshrc:
         path: configs/zsh/.zshrc
 
@@ -33,17 +31,17 @@
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     -
+      description: Installing homebrew packages
+      command: brew bundle --cleanup -v --file configs/Brewfile
+      stdin: true
+      stdout: true
+      stderr: true
+    -
       description: Set zsh as default shell (only if needed)
       command: |
         if [ "$SHELL" != "$(which zsh)" ]; then
           chsh -s "$(which zsh)"
         fi
-      stdin: true
-      stdout: true
-      stderr: true
-    -
-      description: Installing homebrew packages
-      command: brew bundle --cleanup -v --file configs/Brewfile
       stdin: true
       stdout: true
       stderr: true

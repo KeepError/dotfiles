@@ -1,5 +1,7 @@
+brew "zsh"
 brew "stow"
 
+brew "gcc"
 brew "ripgrep"
 brew "neovim"
 brew "tmux"
