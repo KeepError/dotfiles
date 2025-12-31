@@ -40,8 +40,15 @@
       description: Set zsh as default shell (only if needed)
       command: |
         if [ "$SHELL" != "$(which zsh)" ]; then
+          echo "$(which zsh)" | sudo tee -a /etc/shells
           chsh -s "$(which zsh)"
         fi
+      stdin: true
+      stdout: true
+      stderr: true
+    -
+      description: Install mise tools
+      command: mise install
       stdin: true
       stdout: true
       stderr: true
