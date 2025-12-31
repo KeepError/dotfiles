@@ -37,6 +37,16 @@
       stdout: true
       stderr: true
     -
+      description: Installing linux packages
+      command: |
+        if [ "$(uname)" = "Linux" ]; then
+          sudo apt-get update
+          sudo apt-get install build-essential
+        fi
+      stdin: true
+      stdout: true
+      stderr: true
+    -
       description: Set zsh as default shell (only if needed)
       command: |
         if [ "$SHELL" != "$(which zsh)" ]; then
