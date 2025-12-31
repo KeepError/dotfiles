@@ -31,13 +31,7 @@
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     -
-      description: Installing homebrew packages
-      command: brew bundle --cleanup -v --file configs/Brewfile
-      stdin: true
-      stdout: true
-      stderr: true
-    -
-      description: Installing linux packages
+      description: Installing linux dependencies
       command: |
         if [ "$(uname)" = "Linux" ]; then
           if ! dpkg -s build-essential >/dev/null 2>&1; then
@@ -45,6 +39,12 @@
             sudo apt-get install -y build-essential
           fi
         fi
+      stdin: true
+      stdout: true
+      stderr: true
+    -
+      description: Installing homebrew packages
+      command: brew bundle --cleanup -v --file configs/Brewfile
       stdin: true
       stdout: true
       stderr: true
