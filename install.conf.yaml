@@ -31,6 +31,7 @@
 
 
 - shell:
+    - [git submodule update --init --recursive, Installing submodules]
     -
       description: Installing homebrew packages
       command: brew bundle --cleanup -v --file platforms/mac/Brewfile

@@ -1,16 +1,5 @@
 # Dotfiles
 
-My personal configuration for macOS, managing system settings, Homebrew packages, and application preferences.
-
-## 📂 Structure
-
-*   **`zsh/`**: Zsh configuration files (managed by Stow).
-*   **`raycast/`**: Raycast settings and exports.
-*   **`Brewfile`**: List of packages and casks to install.
-*   **`macsettings.sh`**: Script to configure macOS defaults (Dock, Finder, etc.).
-*   **`stow.sh`**: Symlinks dotfiles using GNU Stow.
-*   **`rebuild.sh`**: The main entry point to install/update everything.
-
 ## 🚀 Getting Started
 
 ### 1. Install Homebrew
@@ -21,18 +10,15 @@ My personal configuration for macOS, managing system settings, Homebrew packages
 Clone this repository to your **Home** directory (e.g., `~/dotfiles`).
 
 ```bash
-git clone <REPO_URL> ~/dotfiles
-cd ~/dotfiles
+git clone <REPO_URL> ~/.dotfiles
+cd ~/.dotfiles
 ```
 
 ### 3. Install & Configure
-Run the rebuild script. This will:
-1.  Install Bundle dependencies from `Brewfile`.
-2.  Apply macOS system defaults (Dock, Finder, etc.).
-3.  Symlink dotfiles using GNU Stow.
+Run the install script.
 
 ```bash
-./rebuild.sh
+./install
 ```
 
 ---
