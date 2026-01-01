@@ -2,6 +2,8 @@
 -- This assumes you mapped CapsLock to this combination via Karabiner
 local hyper = { "cmd", "alt", "ctrl", "shift" }
 
+hs.window.animationDuration = 0
+
 --------------------------------------------------------------------------------
 -- 1. WINDOW MANAGEMENT (Vim-style setup)
 --------------------------------------------------------------------------------
