@@ -203,7 +203,7 @@ require("mini.completion").setup()
 
 -- LSP setup
 -- Find available here: https://github.com/neovim/nvim-lspconfig/tree/master/lsp
-vim.lsp.enable({ "lua_ls", "ty", "ruff", "ts_ls", "biome" })
+vim.lsp.enable({ "lua_ls", "ty", "ruff", "ts_ls", "biome", "gopls" })
 
 vim.diagnostic.config({
   virtual_text = true,
@@ -242,6 +242,7 @@ require("conform").setup({
     python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
     javascript = { "biome-check" },
     typescript = { "biome-check" },
+    go = { "gofmt" },
   },
 })
 
