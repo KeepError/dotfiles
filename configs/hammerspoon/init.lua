@@ -50,21 +50,29 @@ hs.hotkey.bind(hyper, "=", function()
 	hs.window.focusedWindow():maximize()
 end)
 
--- Almost Maximize (Hyper + -)
--- Creates a centered window with some padding
+-- Shrink Window (Hyper + -)
+-- Shrinks width/height by 10% each press, keeping it centered
 hs.hotkey.bind(hyper, "-", function()
 	local win = hs.window.focusedWindow()
 	if not win then
 		return
 	end
-	local f = win:frame()
-	local screen = win:screen()
-	local max = screen:frame()
 
-	f.x = max.x + (max.w * 0.1)
-	f.y = max.y + (max.h * 0.1)
-	f.w = max.w * 0.8
-	f.h = max.h * 0.8
+	local f = win:frame()
+	local step = 0.9 -- 90% of current size (shrink by 10%)
+
+	-- Store old dimensions to calculate center offset
+	local oldW = f.w
+	local oldH = f.h
+
+	-- Apply shrink
+	f.w = oldW * step
+	f.h = oldH * step
+
+	-- Adjust X and Y to keep the window centered while shrinking
+	f.x = f.x + (oldW - f.w) / 2
+	f.y = f.y + (oldH - f.h) / 2
+
 	win:setFrame(f)
 end)
 
