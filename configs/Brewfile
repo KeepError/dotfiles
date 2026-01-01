@@ -28,6 +28,8 @@ brew "sevenzip"
 cask "font-fira-code-nerd-font"
 
 cask "raycast"
+cask "karabiner-elements"
+cask "hammerspoon"
 cask "ghostty"
 cask "orbstack"
 cask "zen"

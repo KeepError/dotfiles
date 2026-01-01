@@ -24,6 +24,10 @@
         path: configs/starship
     ~/.config/yazi:
         path: configs/yazi
+    ~/.config/karabiner:
+        path: configs/karabiner
+    ~/.hammerspoon:
+        path: configs/hammerspoon
     ~/.zshrc:
         path: configs/zsh/.zshrc
 
