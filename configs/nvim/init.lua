@@ -117,6 +117,7 @@ require("lazy").setup({
     { "nvim-mini/mini.completion", version = "*" },
     { "neovim/nvim-lspconfig" },
     { "stevearc/conform.nvim" },
+    { "OXY2DEV/markview.nvim", lazy = false },
   },
   install = { colorscheme = { "habamax" } },
   checker = { enabled = true },
