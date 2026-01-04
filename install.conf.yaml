@@ -26,6 +26,8 @@
         path: configs/yazi
     ~/.config/karabiner:
         path: configs/karabiner
+    ~/.config/fish:
+        path: configs/fish
     ~/.hammerspoon:
         path: configs/hammerspoon
     ~/.zshrc:
@@ -55,9 +57,9 @@
     -
       description: Set zsh as default shell (only if needed)
       command: |
-        if [ "$SHELL" != "$(which zsh)" ]; then
-          echo "$(which zsh)" | sudo tee -a /etc/shells
-          chsh -s "$(which zsh)"
+        if [ "$SHELL" != "$(command -v zsh)" ]; then
+          echo "$(command -v zsh)" | sudo tee -a /etc/shells
+          chsh -s "$(command -v zsh)"
         fi
       stdin: true
       stdout: true

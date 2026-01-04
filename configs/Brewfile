@@ -1,4 +1,6 @@
 brew "zsh"
+brew "fish"
+brew "nushell"
 brew "stow"
 
 brew "gcc"
