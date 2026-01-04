@@ -27,6 +27,7 @@ brew "resvg"
 brew "imagemagick"
 brew "sevenzip"
 brew "tlrc"
+brew "eza"
 
 cask "font-fira-code-nerd-font"
 
