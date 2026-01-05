@@ -1,3 +1,3 @@
-function ls --wraps=eza --description 'eza replacement for ls'
-    command eza --icons=auto $argv
+function ls --wraps=eza --wraps='eza --icons=always' --description 'alias ls=eza --icons=always'
+    eza --icons=always $argv
 end
