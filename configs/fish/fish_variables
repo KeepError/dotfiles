@@ -1,3 +1,4 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
+SETUVAR --export XDG_CONFIG_HOME:/Users/egor/\x2econfig
 SETUVAR __fish_initialized:4300

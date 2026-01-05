@@ -106,18 +106,11 @@ require("lazy").setup({
   spec = {
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     { "wakatime/vim-wakatime", lazy = false },
-    { "nvim-mini/mini.statusline", version = "*" },
-    { "nvim-mini/mini.pick", version = "*" },
-    { "nvim-mini/mini.files", version = "*" },
-    { "nvim-mini/mini.icons", version = "*" },
-    { "nvim-mini/mini.starter", version = "*" },
-    { "nvim-mini/mini.notify", version = "*" },
-    { "nvim-mini/mini.clue", version = "*" },
-    { "nvim-mini/mini.diff", version = "*" },
-    { "nvim-mini/mini.completion", version = "*" },
+    { "nvim-mini/mini.nvim", version = "*" },
     { "neovim/nvim-lspconfig" },
     { "stevearc/conform.nvim" },
     { "OXY2DEV/markview.nvim", lazy = false },
+    { "folke/which-key.nvim", event = "VeryLazy" },
   },
   install = { colorscheme = { "habamax" } },
   checker = { enabled = true },
@@ -156,45 +149,8 @@ require("mini.starter").setup()
 -- Notify setup
 require("mini.notify").setup()
 
--- Clue setup
-local miniclue = require("mini.clue")
-miniclue.setup({
-  triggers = {
-    -- Leader triggers
-    { mode = "n", keys = "<Leader>" },
-    { mode = "x", keys = "<Leader>" },
-    -- Built-in completion
-    { mode = "i", keys = "<C-x>" },
-    -- `g` key
-    { mode = "n", keys = "g" },
-    { mode = "x", keys = "g" },
-    -- Marks
-    { mode = "n", keys = "'" },
-    { mode = "n", keys = "`" },
-    { mode = "x", keys = "'" },
-    { mode = "x", keys = "`" },
-    -- Registers
-    { mode = "n", keys = '"' },
-    { mode = "x", keys = '"' },
-    { mode = "i", keys = "<C-r>" },
-    { mode = "c", keys = "<C-r>" },
-    -- Window commands
-    { mode = "n", keys = "<C-w>" },
-    -- `z` key
-    { mode = "n", keys = "z" },
-    { mode = "x", keys = "z" },
-  },
-
-  clues = {
-    -- Enhance this by adding descriptions for <Leader> mapping groups
-    miniclue.gen_clues.builtin_completion(),
-    miniclue.gen_clues.g(),
-    miniclue.gen_clues.marks(),
-    miniclue.gen_clues.registers(),
-    miniclue.gen_clues.windows(),
-    miniclue.gen_clues.z(),
-  },
-})
+-- Surround setup
+require("mini.surround").setup()
 
 -- Diff setup
 require("mini.diff").setup({ view = { style = "sign" } })

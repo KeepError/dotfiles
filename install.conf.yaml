@@ -28,6 +28,8 @@
         path: configs/karabiner
     ~/.config/fish:
         path: configs/fish
+    ~/.config/lazygit:
+        path: configs/lazygit
     ~/.hammerspoon:
         path: configs/hammerspoon
     ~/.zshrc:
