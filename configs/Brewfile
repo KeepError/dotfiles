@@ -30,6 +30,7 @@ brew "tlrc"
 brew "eza"
 brew "wget"
 brew "bat"
+brew "btop"
 
 cask "font-fira-code-nerd-font"
 
