@@ -1,3 +1,5 @@
+set -gx TERM xterm-256color
+
 # Vi mode
 fish_vi_key_bindings
 
