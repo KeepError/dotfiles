@@ -20,8 +20,6 @@
         path: configs/tmux
     ~/.config/zellij:
         path: configs/zellij
-    ~/.config/starship:
-        path: configs/starship
     ~/.config/yazi:
         path: configs/yazi
     ~/.config/karabiner:
@@ -30,6 +28,8 @@
         path: configs/fish
     ~/.config/lazygit:
         path: configs/lazygit
+    ~/.config/starship.toml:
+        path: configs/starship/starship.toml
     ~/.hammerspoon:
         path: configs/hammerspoon
     ~/.zshrc:
