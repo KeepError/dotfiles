@@ -6,7 +6,3 @@ elif [[ -f "/home/linuxbrew/.linuxbrew/bin/brew" ]]; then
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
-### Set default shell
-if command -v fish >/dev/null && [[ $- == *i* ]]; then
-  exec fish
-fi
