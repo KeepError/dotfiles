@@ -64,3 +64,7 @@ cask "tableplus"
 cask "balenaetcher"
 cask "cleanupbuddy"
 cask "rawtherapee"
+cask "darktable"
+cask "chatgpt"
+
+cask "soulseek"
