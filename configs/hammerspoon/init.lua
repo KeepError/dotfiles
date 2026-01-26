@@ -25,6 +25,25 @@ function setFrame(x, y, w, h)
 	win:setFrame(f)
 end
 
+-- Helper to launch app and move mouse to its center
+function launchAndMove(appName)
+	hs.application.launchOrFocus(appName)
+
+	-- A small delay is often required to let the window focus actually register
+	-- before we try to calculate coordinates.
+	hs.timer.doAfter(0.1, function()
+		local app = hs.application.get(appName)
+		if app then
+			local win = app:mainWindow() or app:focusedWindow()
+			if win then
+				local f = win:frame()
+				local center = { x = f.x + (f.w / 2), y = f.y + (f.h / 2) }
+				hs.mouse.absolutePosition(center)
+			end
+		end
+	end)
+end
+
 -- Left Half (Hyper + H)
 hs.hotkey.bind(hyper, "H", function()
 	setFrame(0, 0, 0.5, 1)
@@ -101,19 +120,14 @@ hs.hotkey.bind(hyper, "0", function()
 	hs.application.launchOrFocus("Ghostty")
 end)
 
--- Visual Studio Code (Hyper + 7)
-hs.hotkey.bind(hyper, "7", function()
-	hs.application.launchOrFocus("Visual Studio Code")
-end)
-
 -- Google Chrome (Hyper + 8)
 hs.hotkey.bind(hyper, "8", function()
-	hs.application.launchOrFocus("Google Chrome")
+	launchAndMove("Google Chrome")
 end)
 
 -- Zen Browser (Hyper + 9)
 hs.hotkey.bind(hyper, "9", function()
-	hs.application.launchOrFocus("Zen")
+	launchAndMove("Zen")
 end)
 
 hs.alert.show("Hammerspoon Config Loaded")

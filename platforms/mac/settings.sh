@@ -5,10 +5,7 @@ apps=(
     "/Applications/Spark Desktop.app"
     "/System/Applications/Notes.app"
     "/System/Applications/Reminders.app"
-    "/System/Applications/Music.app"
-    "/Applications/Visual Studio Code.app"
     "/Applications/Ghostty.app"
-    "/Applications/Insomnia.app"
 )
 defaults write com.apple.dock persistent-apps -array
 defaults write com.apple.dock persistent-others -array
