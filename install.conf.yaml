@@ -14,6 +14,8 @@
         path: configs/nvim
     ~/.config/ghostty:
         path: configs/ghostty
+    ~/.config/alacritty:
+        path: configs/alacritty
     ~/.config/mise:
         path: configs/mise
     ~/.config/tmux:
