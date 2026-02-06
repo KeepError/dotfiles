@@ -11,3 +11,4 @@ zoxide init fish | source
 
 # fzf setup
 fzf --fish | source
+set -x XDG_CONFIG_HOME $HOME/.config
