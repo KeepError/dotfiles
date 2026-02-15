@@ -66,5 +66,6 @@ cask "cleanupbuddy"
 cask "rawtherapee"
 cask "darktable"
 cask "chatgpt"
+cask "todoist-app"
 
 cask "soulseek"
