@@ -3,8 +3,8 @@ apps=(
     "/System/Applications/Apps.app"
     "/Applications/Zen.app"
     "/Applications/Spark Desktop.app"
-    "/System/Applications/Notes.app"
-    "/System/Applications/Reminders.app"
+    "/Applications/Todoist.app"
+    "/Applications/Obsidian.app"
     "/Applications/Ghostty.app"
 )
 defaults write com.apple.dock persistent-apps -array
