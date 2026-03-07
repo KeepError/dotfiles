@@ -59,11 +59,11 @@
       stdout: true
       stderr: true
     -
-      description: Set zsh as default shell (only if needed)
+      description: Set fish as default shell (only if needed)
       command: |
-        if [ "$SHELL" != "$(command -v zsh)" ]; then
-          echo "$(command -v zsh)" | sudo tee -a /etc/shells
-          chsh -s "$(command -v zsh)"
+        if [ "$SHELL" != "$(command -v fish)" ]; then
+          echo "$(command -v fish)" | sudo tee -a /etc/shells
+          chsh -s "$(command -v fish)"
         fi
       stdin: true
       stdout: true
