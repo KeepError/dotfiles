@@ -68,5 +68,6 @@ cask "darktable"
 cask "chatgpt"
 cask "todoist-app"
 cask "bitwarden"
+cask "rustdesk"
 
 cask "soulseek"
