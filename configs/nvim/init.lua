@@ -159,8 +159,6 @@ require("mini.diff").setup({ view = { style = "sign" } })
 require("mini.completion").setup()
 
 -- LSP setup
--- Find available here: https://github.com/neovim/nvim-lspconfig/tree/master/lsp
-vim.lsp.enable({ "lua_ls", "ty", "ruff", "ts_ls", "biome", "gopls" })
 
 vim.diagnostic.config({
   virtual_text = true,
@@ -190,19 +188,6 @@ if mise_ts_path ~= "" then
   })
 end
 
--- Format setup
-
--- Find available here: https://github.com/stevearc/conform.nvim/blob/master/lua/conform/formatters
-require("conform").setup({
-  formatters_by_ft = {
-    lua = { "stylua" },
-    python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
-    javascript = { "biome-check" },
-    typescript = { "biome-check" },
-    go = { "gofmt" },
-  },
-})
-
 -- Format on save
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*",
@@ -210,3 +195,5 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     require("conform").format({ bufnr = args.buf })
   end,
 })
+
+require("lsp")
