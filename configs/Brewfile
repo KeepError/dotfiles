@@ -34,6 +34,8 @@ brew "bat"
 brew "btop"
 brew "mole"
 
+brew "node_exporter"
+
 cask "font-fira-code-nerd-font"
 
 cask "raycast"
