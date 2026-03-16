@@ -135,7 +135,15 @@ vim.keymap.set("n", "<leader>fh", minipick.builtin.help, { desc = "Help tags" })
 local minifiles = require("mini.files")
 minifiles.setup({ windows = { preview = true } })
 
+-- Open explorer
 vim.keymap.set("n", "<leader>e", minifiles.open, { desc = "Explorer" })
+
+-- Open explorer focused on the current file
+vim.keymap.set("n", "<leader>E", function()
+  -- Get the absolute path of the current buffer
+  local current_file = vim.api.nvim_buf_get_name(0)
+  minifiles.open(current_file)
+end, { desc = "Explorer (current file)" })
 
 -- Theme setup
 vim.cmd.colorscheme("catppuccin")
