@@ -32,6 +32,7 @@ brew "eza"
 brew "wget"
 brew "bat"
 brew "btop"
+brew "mole"
 
 cask "font-fira-code-nerd-font"
 
